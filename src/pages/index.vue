@@ -25,7 +25,7 @@
         </div>
         <div class="h-screen w-full relative lg:w-1/2">
             <img
-                :src="`/_nuxt/assets/photos_${selected}.jpg`"
+                :src="`~/assets/photos_${selected}.jpg`"
                 loading="lazy"
                 :alt="`project-image-${selected}`"
                 class="w-full h-full object-cover object-center animate-fade-in"
