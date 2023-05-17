@@ -1,5 +1,10 @@
 <template>
-    <div>
-        <NuxtPage />
-    </div>
+    <NuxtPage />
 </template>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+</style>
