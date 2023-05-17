@@ -25,7 +25,7 @@
         </div>
         <div class="h-screen w-full relative lg:w-1/2">
             <img
-                :src="`~/assets/photos_${selected}.jpg`"
+                :src="useAsset(`photos_${selected}` + '.jpg')"
                 loading="lazy"
                 :alt="`project-image-${selected}`"
                 class="w-full h-full object-cover object-center animate-fade-in"
@@ -76,5 +76,14 @@ const data = ref([
 
 function setImage(index: number) {
     selected.value = index
+}
+
+function useAsset(path: string): string {
+    const assets = import.meta.glob('~/assets/**/*', {
+        eager: true,
+        import: 'default'
+    })
+    // @ts-expect-error: wrong type info
+    return assets['/assets/' + path]
 }
 </script>
