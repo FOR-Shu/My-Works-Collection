@@ -20,6 +20,15 @@
                     <template #title> {{ _d.title }} </template>
                     <template #subtitle> {{ _d.subtitle }} </template>
                     <template #description> {{ _d.description }} </template>
+                    <template #projectLink>
+                        <a
+                            :href="_d.projectLink"
+                            target="_blank"
+                            class="font-normal text-base text-light-5 cursor-pointer duration-300 rounded-1 p-2 outline outline-1 hover:bg-light-5 hover:text-dark duration-500 no-underline"
+                        >
+                            ⇢ {{ _d.projectLink }}
+                        </a>
+                    </template>
                 </PhotoInfo>
             </template>
         </div>
@@ -37,7 +46,7 @@
             >
                 <template v-for="n in 3" :key="`button-${n}`">
                     <button
-                        class="rounded-lg font-semibold bg-dark-900/30 h-10 p-2 w-10 border-none cursor-pointer hover:bg-dark-900/60 duration-300 hover:text-light-5"
+                        class="p-2 cursor-pointer duration-300 rounded-lg font-semibold bg-dark-900/30 h-10 w-10 border-none hover:bg-dark-900/60 hover:text-light-5"
                         @click="setImage(n)"
                     >
                         {{ n }}
@@ -53,24 +62,26 @@ const selected = ref(1)
 const data = ref([
     {
         index: 1,
-        title: 'Project One',
-        subtitle: 'Front End Developer',
-        description:
-            'Nice to meet you. Nice to meet you. Nice to meet you. Nice to meet you. Nice to meet you.'
+        title: 'Shuyuan’s Portfolio',
+        subtitle: '#React #SASS #NPM #Sanity',
+        description: '用一頁式網頁介紹自己及專案紀錄。',
+        projectLink: 'https://shuyuanchuang.com'
     },
     {
         index: 2,
-        title: 'Project Two',
-        subtitle: 'Back End Developer',
+        title: 'iOS Club',
+        subtitle: '#React #Tailwindcss #Figma',
         description:
-            'Nice to meet you. Nice to meet you. Nice to meet you. Nice to meet you. Nice to meet you.'
+            '在擔任 iOS Club 副社長期間，與社團夥伴共同開發的社團網頁用於介紹與招生。',
+        projectLink: 'https://iosclub.tw/'
     },
     {
         index: 3,
-        title: 'Project Three',
-        subtitle: 'UI/UX Designer',
+        title: 'Save Food Battle',
+        subtitle: '#Flutter #MongoDB #Figma #Firebase #Figma',
         description:
-            'Nice to meet you. Nice to meet you. Nice to meet you. Nice to meet you. Nice to meet you.'
+            '為減少食物浪費及室友間的和諧，本專題計畫為發展出一個完善的多人食材管理系統為主，並利用自動化功能計算食品到期日、減少繁瑣輸入資料的步驟、使用影像辨識及 AR 技術分辨食物的持有人、食物種類等，以有別於市面上的方式，讓使用者追求更佳完善的使用者體驗。',
+        projectLink: 'https://github.com/FOR-Shu/Save_food_Battle'
     }
 ])
 
