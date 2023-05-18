@@ -46,7 +46,7 @@
             >
                 <template v-for="n in 3" :key="`button-${n}`">
                     <button
-                        class="p-2 cursor-pointer duration-300 rounded-lg font-semibold bg-dark-900/30 h-10 w-10 border-none hover:bg-dark-900/60 hover:text-light-5"
+                        class="p-2 cursor-pointer duration-300 text-light-5 rounded-lg font-semibold bg-dark-900/70 h-10 w-10 border-none hover:bg-dark-900/50"
                         @click="setImage(n)"
                     >
                         {{ n }}
